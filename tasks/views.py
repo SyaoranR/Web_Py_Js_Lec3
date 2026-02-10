@@ -24,6 +24,7 @@ def add(req):
         form = NewTaskForm(req.POST)
         if form.is_valid():
             task = form.cleaned_data["task"]
+            # tasks.append(task)
             # to_do.append(task)
             req.session["tasks"] += [task]
             # return HttpResponseRedirect("/tasks")
