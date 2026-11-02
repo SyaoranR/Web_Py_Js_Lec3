@@ -1,9 +1,11 @@
 {% extends "tasks/layout.html" %}   
-
+<!-- Like an Import, but for Django Templating lang in html -->
 {% block body %}
         <h1>Add Task</h1>
         <form action="{% url 'tasks:add' %}" method="post">
+            <!-- Cross-Site Request Forgery = Unique Security token to be submitted with the form itself -->
             {% csrf_token %}
+            <!-- the same variable inside " " as "form" -->
             {{ form }}
             <input type="submit">
         </form>

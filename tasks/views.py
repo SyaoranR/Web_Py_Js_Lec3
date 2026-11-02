@@ -21,7 +21,10 @@ def index(req):
 
 def add(req):
     if req.method == "POST":
+        # creating newForm with all data that user/client sends/submit
         form = NewTaskForm(req.POST)
+
+        # server-side validation
         if form.is_valid():
             task = form.cleaned_data["task"]
             # tasks.append(task)

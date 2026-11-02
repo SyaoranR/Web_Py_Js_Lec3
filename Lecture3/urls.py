@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+# Apps inside one main project
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ola/', include("ola.urls")),
